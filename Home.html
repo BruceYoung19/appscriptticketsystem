@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+
+<style>
+/* TODO CODE :
+ 1. Transfer code to a CSS Files.
+ 2. Change color and Design*/
+
+.btn-group button {
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 50%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+
+/* TODO CODE - Not fully center will change this*/
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+h1{
+    text-align: center;
+}
+</style>
+<body> 
+
+
+<h1>Home</h1>
+
+<div class = "center">
+    <div class="btn-group">
+        <button>Create Tickets</button>
+        <button>Dashboard</button>
+        <button>Todo List </button> 
+    </div>
+</div>
+
+</body>
+</html>
