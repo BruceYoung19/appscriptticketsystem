@@ -1,0 +1,84 @@
+<!Doctype html>
+<html>
+
+<style>
+.notifcation-slider{
+    text-align: right;
+}
+
+.banner-box:hover,
+.banner-box:focus-visible{
+--_p: 0px;
+outline-color: var(--color);
+outline-offset: .05em;
+}
+
+.banner-box {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#left, #right {
+ width: 200px; 
+ height: 80px;
+ float: left;
+}
+
+
+</style>
+
+<Header>DASHBOARD</Header>
+
+<body>
+    <div class ="notifcation-slider"> Notification slider </div>
+    <div class="greeting box">
+        <p1>WELCOME BACK,</p1><br>
+        <p2>Person's name</p2>  
+    </div>
+
+    
+    
+    <div class="banner-box">
+        <p3>Advertisement</p3>
+    </div>
+
+    <div class="banner-box-holder">
+        <div class = "banner-box" id="left">
+            <p4>PROB TICKETS<p4><br>
+                <p4>THIS MONTH</p4>
+        </div>
+        <div class = "banner-box" id="right">
+            <p4>WANT TICKETS<p4><br>
+                <p4>THIS MONTH</p4>
+        </div>
+        <div class = "banner-box" id="right">
+            <p4>OPENT TICKETS<p4><br>
+                <p4>THIS MONTH</p4>
+        </div>
+    </div>
+    
+    
+</body>
+
+<footer> 
+</footer>
+
+</html>

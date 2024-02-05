@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <h1>CREATE A TICKET</h1>
+
+<div class = "center">
+    
+    <label> what is the problem?</label>
+    <input type="text" id="title"></input><br>
+    
+    <label> please provide a description: </label>
+    <input type="text" id="description"></input><br>
+    
+    <label> What type of an issue is this</label>
+    <select name="ticket_cat" id="category">
+      <option value = "Software">Software</option>
+      <option value = "Hardware">Hardware</option>
+      <option value = "Anythnig"> Anything else</option>
+    </select><br>
+
+    <label> please answer the following, this is a </label>
+    <select name="ticket_type" id="tickettype">
+    <option >''</option>
+    <option value ="PROB" >Problem</option>
+    <option value="WAN">Something I want</option>
+    <option value="PRJ"> Project related</option>
+    </select><br>
+
+    <button id="submit_button"> create ticket </button>
+</div>
+
+<script>
+  document.getElementById("submit_button").addEventListener("click",generateTicket);
+
+  function generateTicket(){
+    
+    function ticket(num,title,description,category){
+      this.num = num;
+      this.title = title;
+      this.description = description;
+      this.category = category;
+    }
+
+
+    var ticketcreation = {};
+
+    var ticketitle = document.getElementById("title").value;
+    var ticketdescription = document.getElementById("description").value;
+    var ticketcategory = document.getElementById("category").value;
+    var tickettype = document.getElementById("tickettype").value;
+
+
+    google.script.run.createTicket(new ticket(tickettype,ticketitle,ticketdescription,ticketcategory));
+    
+  }
+</script>
+  </body>
+</html>
