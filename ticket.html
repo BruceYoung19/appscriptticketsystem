@@ -2,6 +2,50 @@
 <html>
 
 <style>
+  
+  .ticket_num , .ticket_date,.ticketlastticketupdated,.assignedto{
+    border-radius: 18px;
+    background: #D3D3D3;
+    padding: 20px; 
+    width: 200px;
+    height: 15px; 
+    margin-bottom: 1em;
+    text-align:left;
+  }
+
+  .ticket_title{
+    border-radius: 18px;
+    background: #F5F5F5;
+    padding: 20px; 
+    width: 700px;
+    height: 15px; 
+    margin-bottom: 1em;
+  }
+
+  .ticket_description{
+   border-radius: 18px;
+    background: #F5F5F5;
+    padding: 20px; 
+    width: 700px;
+    height: 50px; 
+    margin-bottom: 1em; 
+  }
+  .right_panel{
+    text-align:right;
+  }
+
+  .container{
+  display: flex;
+  justify-content: space-between;
+  }
+
+  .ticket_status{
+    border-radius: 18px;
+    padding: 20px; 
+    width: 250px;
+    height: 15px; 
+    margin-bottom: 1em;
+  }
 
 </style>
 <head>
@@ -9,9 +53,56 @@
 </head>
 
 <body> 
-<p1> This is view tickets </p1>
 
+<div class="container">  
+  <div class="left">
+     <div class = "ticket_num" id="ticketbox">
+    <p1> Ticket </p1>
+  </div>
+  <div class = "ticket_num" id="ticketbox">
+    <p1> Category </p1>
+  </div>
+   <div class = "ticket_date" id="ticketbox">
+    <p1> Date created </p1>
+    </div>
+  </div>
+
+  <div class = "right_panel">
+    <div class="ticketlastticketupdated">
+      <p1> Ticket Last Updated : </p1>
+    </div>
+
+    <div class="assignedto">
+      <p1>Assigned : </p1>
+    </div>
+
+    <select class = "ticket_status">
+    <option value="OPEN"> OPEN </option>
+    <option value="WAITING"> WAITING FOR AN UPDATE </option>
+    <option value="RESOLVED"> RESOLVED </option>
+    <option value="CLOSED"> CLOSED </option>
+  </select>
+
+  </div>
+
+</div>
+
+  <div class="ticket_title">
+    <p1>ticket title</p1>
+
+  </div>
+
+  <div class="ticket_description">
+    <p1>ticket description</p1>
+
+  </div>
+   <!-- For making a comments in the ticket -->
+   <!-- BUTTON to update the ticket + Button to Resolve the ticket -->
+   <!-- DIV for ticket comments.-->
 
 </body>
-
+<script>
+  // TODO CODE: Update the spreadsheet, if it is a requirement
+  // TODO CODE: 
+</script>
 </html>

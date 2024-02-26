@@ -33,8 +33,9 @@ function ticketnum(ticketcode){
   var today = new Date();
   var month = today.getMonth();
   var fullyear = today.getFullYear().toString().split([0]);
+  var number = createRandomNum();
    
-  var ticketoutput = ticketcode+fullyear[1]+month+"01"
+  var ticketoutput = ticketcode+fullyear[1]+month+ number;
   return ticketoutput;
 }
 
@@ -60,3 +61,38 @@ function createTicketNum(ticketc){
       return ticketnumber;
   }
 }
+
+// Creating ticketing number
+function createRandomNum(){
+  
+   var randomnumber = Math.random(99)*100;
+   var stringsplit = [{}]; 
+   var stringsplit = String(randomnumber).split(".");
+   
+   return stringsplit[0];
+}
+
+// Reading the Excelsheet
+// TODO CODE: Requirements are for spreadsheet name and data.
+function getExcelData(spreadsheetName){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();// Spreadsheet
+  var sheet = ss.getSheetByName(spreadsheetName);// Spreadsheet name
+  var last_row = sheet.getLastRow();
+  var data = sheet.getRange("A1:G" + last_row).getValues();
+
+  return data;}
+
+  // reads through excel sheet
+  function loadForm(){
+    var ss = SpreadsheetApp.getActiveSpreadsheet();// Spreadsheet
+    var sheet = ss.getSheetByName("tickets");// Spreadsheet name
+    var last_row = sheet.getLastRow();
+    var data = sheet.getRange("A1:" + last_row).getValues();
+
+    var ticketnumbers = [];// checking for duplicate ticket numbers
+
+    for(var i = 0;i< data.length;i++){ // Reading through the excel sheet.
+      ticketnumbers.push(data[i][0]);
+    }
+
+  }
