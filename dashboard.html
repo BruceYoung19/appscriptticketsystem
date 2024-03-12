@@ -1,84 +1,105 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
+  <style>
+    .Advertisement{
+      border-radius: 18px;
+      background: #D3D3D3;
+      padding: 20px; 
+      width: 500px;
+      height: 40px; 
+      margin-bottom: 1em;
+      margin-top: 1em;
+      text-align:left;
+    }
+    header {
+      font-size :30px;
+    }
+    .tile_dashboard{
+      background: #D3D3D3;
+      width: 700px;
+      height: 150px;
+      border-radius: 18px; 
+    }
+    .tiles{
+      background: #FF5733;
+      width: 200px;
+      height: 80px;
+      border-radius: 18px;
+      margin-top: 1em;
+      float: Left;
+      margin: 10px;
+      text-align: center;
+    }
+    
+    .middlecontainer{
+      background: #D3D3D3;
+      width: 800px;
+      height: 200px;
+      border-radius: 18px; 
+      margin-top: 1em;
+      margin: 10px;
+    }
 
-<style>
-.notifcation-slider{
-    text-align: right;
-}
+    .middlecomponents{
+      background: #FF5733;
+      border-radius: 18px;
+      margin-top: 1em;
+      float: Left;
+      margin: 10px;
+      text-align: center;
+    }
+    
+    #piegraphcontainer{
+      width: 200px;
+      height: 200px;
+    }
 
-.banner-box:hover,
-.banner-box:focus-visible{
---_p: 0px;
-outline-color: var(--color);
-outline-offset: .05em;
-}
-
-.banner-box {
-  --b: 3px;   /* border thickness */
-  --s: .45em; /* size of the corner */
-  --color: #373B44;
+    #listofticketcontainer{
+      width: 200px;
+      height: 400px;
+    }
   
-  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
-  color: var(--color);
-  --_p: var(--s);
-  background:
-    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
-    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
-  transition: .3s linear, color 0s, background-color 0s;
-  outline: var(--b) solid #0000;
-  outline-offset: .6em;
-  font-size: 16px;
 
-  border: 0;
-
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-#left, #right {
- width: 200px; 
- height: 80px;
- float: left;
-}
-
-
-</style>
-
-<Header>DASHBOARD</Header>
-
-<body>
-    <div class ="notifcation-slider"> Notification slider </div>
-    <div class="greeting box">
-        <p1>WELCOME BACK,</p1><br>
-        <p2>Person's name</p2>  
+  
+  </style>
+  <head>
+    <base target="_top">  
+  </head>
+  <header>Dashboard</header>
+  <body>
+    <!-- This can be used for an api like news or somethings -->
+    <div class= "Advertisement" id = "tile"></div>
+    
+    <div class= "tile_dashboard">
+      <!-- Number of Want -->
+      <div class = "tiles">
+        <p1> Want </p1><br>
+        <p1> Number </p1>
+      </div>
+      <!-- Number of Incidents  -->
+      <div class = "tiles">
+        <p1> Incidents </p1><br>
+        <p1> Number </p1>
+      </div>
+      <!-- Resolved tickets -->
+      <div class = "tiles">
+        <p1> Resolved Tickets - this month </p1><br>
+        <p1> Number </p1>
+      </div>
     </div>
 
-    
-    
-    <div class="banner-box">
-        <p3>Advertisement</p3>
+      <div class = "middlecontainer">
+        <!-- piegraph of states -->
+        <div class = "middlecomponents" id = "piegraphcontainer">
+            <p1> Pie Graph </p1>
+        </div>
+        <!-- current amount of tickets -->
+        <div class = "middlecomponents" id = "listofticketcontainer">
+            <p1> list of tickets</p1>
+        </div>
+      </div>
+     
+
     </div>
-
-    <div class="banner-box-holder">
-        <div class = "banner-box" id="left">
-            <p4>PROB TICKETS<p4><br>
-                <p4>THIS MONTH</p4>
-        </div>
-        <div class = "banner-box" id="right">
-            <p4>WANT TICKETS<p4><br>
-                <p4>THIS MONTH</p4>
-        </div>
-        <div class = "banner-box" id="right">
-            <p4>OPENT TICKETS<p4><br>
-                <p4>THIS MONTH</p4>
-        </div>
-    </div>
-    
-    
-</body>
-
-<footer> 
-</footer>
-
+  </body>
 </html>

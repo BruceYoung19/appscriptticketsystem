@@ -1,61 +1,151 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <base target="_top">
-  </head>
-  <body>
-    <h1>CREATE A TICKET</h1>
 
-<div class = "center">
-    
-    <label> what is the problem?</label>
-    <input type="text" id="title"></input><br>
-    
-    <label> please provide a description: </label>
-    <input type="text" id="description"></input><br>
-    
-    <label> What type of an issue is this</label>
-    <select name="ticket_cat" id="category">
-      <option value = "Software">Software</option>
-      <option value = "Hardware">Hardware</option>
-      <option value = "Anythnig"> Anything else</option>
-    </select><br>
+<head>
+  <base target="_top">
+</head>
+<style>
+  .ticket_modifier {
+    background-color: #fff;
+    border: 0 solid #e2e8f0;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 1em;
+    margin-left: 1em;
+  }
 
-    <label> please answer the following, this is a </label>
-    <select name="ticket_type" id="tickettype">
-    <option >''</option>
-    <option value ="PROB" >Problem</option>
-    <option value="WAN">Something I want</option>
-    <option value="PRJ"> Project related</option>
-    </select><br>
+  .ticket_modifier:hover {
+    background-color: #1e293b;
+    color: #fff;
+  }
 
-    <button id="submit_button"> create ticket </button>
-</div>
-
-<script>
-  document.getElementById("submit_button").addEventListener("click",generateTicket);
-
-  function generateTicket(){
-    
-    function ticket(num,title,description,category){
-      this.num = num;
-      this.title = title;
-      this.description = description;
-      this.category = category;
+  @media (min-width: 768px) {
+    .ticket_modifier {
+      font-size: 1.125rem;
+      padding: 1rem 2rem;
     }
 
+    .center_container {
+      background-color: #F0FFF0;
+      height: 500px;
+      width: 430px;
+      padding: 18px;
+      border-radius: 10px;
+    }
 
-    var ticketcreation = {};
+    .center {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+    }
 
-    var ticketitle = document.getElementById("title").value;
-    var ticketdescription = document.getElementById("description").value;
-    var ticketcategory = document.getElementById("category").value;
-    var tickettype = document.getElementById("tickettype").value;
+    body {
+      background-color: pink;
+    }
+
+    p {
+      text-align: center;
+      font-size: 40px;
+    }
+
+    label {
+      text-align: center;
+    }
+
+    input {
+      border-radius: 10px;
+      border: 3px solid #ccc;
+    }
+
+    select {
+      border-radius: 10px;
+      width: 400px;
+      height: 30px;
+    }
+
+    .largertextbox {
+      height: 100px;
+      width: 400px;
+    }
+
+    .tickettitle {
+      width: 400px;
+    }
+</style>
+
+<body>
+  <div class="center">
+    <div class="center_container">
+
+      <p> LOG YOUR ISSUE</p>
+      <label> WHAT IS YOUR ISSUE?</label><br>
+      <input type="text" id="title" class="tickettitle"></input><br>
+
+      <label> PLEASE PROVIDE A DESCRIPTION OF THE ISSUE: </label><br>
+      <input type="text" id="description" class="largertextbox"></input><br>
+
+      <label> WHAT TYPE OF ISSUE IS IT?</label><br>
+      <select name="ticket_cat" id="category">
+        <option value="Software">Software</option>
+        <option value="Hardware">Hardware</option>
+        <option value="Anything"> Anything else</option>
+      </select><br>
+
+      <label> PLEASE ANSWER THE FOLLOWING, THIS IS A</label><br>
+      <select name="ticket_type" id="tickettype" class="tickettype">
+        <option>''</option>
+        <option value="PROB">Problem</option>
+        <option value="WAN">Something I want</option>
+        <option value="PRJ"> Project related</option>
+      </select><br>
+
+      <button class="ticket_modifier" id="submit_button"> Create Ticket </button>
+      <?var url = getScriptUrl();?><a href='<?=url?>?page=home'><input type='button' class="ticket_modifier"
+          value='Back Button' id="pushbutton"></a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("submit_button").addEventListener("click", generateTicket);
+
+    function generateTicket() {
+
+      function ticket(num, title, description, category) {
+        this.num = num;
+        this.title = title;
+        this.description = description;
+        this.category = category;
+      }
 
 
-    google.script.run.createTicket(new ticket(tickettype,ticketitle,ticketdescription,ticketcategory));
-    
-  }
-</script>
-  </body>
+      var ticketcreation = {};
+
+      var ticketitle = document.getElementById("title").value;
+      var ticketdescription = document.getElementById("description").value;
+      var ticketcategory = document.getElementById("category").value;
+      var tickettype = document.getElementById("tickettype").value;
+
+
+      google.script.run.createTicket(new ticket(tickettype, ticketitle, ticketdescription, ticketcategory));
+
+    }
+  </script>
+</body>
+
 </html>
