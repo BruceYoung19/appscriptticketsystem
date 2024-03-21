@@ -14,16 +14,16 @@ This can be for someone, who is in college/highschool.
 ## What is working?
 - Creating incidents , however in this platform it is called PROB (Standing for problems)
 - Hardware form is up
-- Buttons has changed color
+- Buttons has changed color 
 
 ## Issues 
-- GUI is ugly -
+- GUI is okay - updated 13 - 03
+    - color still needs to be changed - pending
 - Not all buttons are working. 
 - Tickets can still be duplicates
-- Excel sheet cannot update blanks cells.
-    - This is current cells that content, on top and bottom of it.
 - Excel file needs to be added.
 
 ## How to set up?
 Please read the KB Article in the following folder.
  - Coming soon, after the development has been complete.
+
